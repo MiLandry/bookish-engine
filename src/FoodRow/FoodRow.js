@@ -1,9 +1,17 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 
-const FoodRow = ({ label, isDelicious, isHealthy, onChange, id }) => {
+const FoodRow = ({ label, isDelicious, isHealthy, onChange, id, isLoaded }) => {
+  let className = isDelicious ? "delicious" : "not-delicious"
+  if (isLoaded) {
+    className += " animate"
+  }
+  if (isHealthy) {
+    className += " healthy"
+  }
+
   return (
-    <tr>
+    <tr className={className}>
       <td>{label}</td>
       <td>
         <input

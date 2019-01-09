@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import FoodRow from "../FoodRow/FoodRow"
 
-const FoodTable = ({ data, onChange }) => {
+const FoodTable = ({ data, onChange, isLoaded }) => {
   const food = Object.keys(data).map(key => {
     const datum = {
       ...data[key],
@@ -27,6 +27,7 @@ const FoodTable = ({ data, onChange }) => {
               isDelicious={isDelicious}
               isHealthy={isHealthy}
               onChange={onChange}
+              isLoaded={isLoaded}
             />
           )
         })}

@@ -1,3 +1,51 @@
 .App {
   text-align: center;
 }
+
+th,
+td {
+  border: 1px solid black;
+}
+
+@keyframes shift-right {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(30px);
+  }
+}
+
+@keyframes shift-baseline {
+  from {
+    transform: translateX(30px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+.delicious {
+  transform: translateX(30px);
+  animation-name: shift-right;
+  animation-duration: 0.5s;
+  opacity: 0;
+}
+
+.delicious.animate {
+  opacity: 1;
+}
+
+.not-delicious {
+  animation-name: shift-baseline;
+  animation-duration: 0.5s;
+  opacity: 0;
+}
+
+.not-delicious.animate {
+  opacity: 1;
+}
+
+.healthy {
+  background-color: green;
+}
