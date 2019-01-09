@@ -6,7 +6,6 @@ import FoodTable from "./FoodTable/FoodTable"
 class App extends Component {
   constructor() {
     super()
-    this.name = "Mike"
     this.state = {
       isLoaded: false,
       food: {

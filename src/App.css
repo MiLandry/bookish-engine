@@ -25,7 +25,7 @@ td {
   }
 }
 
-@keyframes shift-healthy {
+@keyframes shift-green {
   from {
     background-color: gray;
   }
@@ -43,28 +43,33 @@ td {
   }
 }
 
-.delicious {
+.food-row {
+  opacity: 0;
+}
+
+.delicious.healthy {
   transform: translateX(30px);
-  animation-name: shift-right;
-  animation-duration: 0.5s;
-  opacity: 0;
+  animation: shift-right 0.5s, shift-green 0.8s;
+  background-color: green;
+}
+/* from here */
+.delicious.not-healthy {
+  transform: translateX(30px);
+  animation: shift-right 0.5s, shift-grey 0.8s;
+  background-color: grey;
 }
 
-.delicious.animate {
-  opacity: 1;
+.not-delicious.healthy {
+  animation: shift-baseline 0.5s, shift-green 0.8s;
+  background-color: green;
+}
+/* to here */
+.not-delicious.not-healthy {
+  animation: shift-baseline 0.5s, shift-grey 0.8s;
+  background-color: grey;
 }
 
-.not-delicious {
-  animation-name: shift-baseline;
-  animation-duration: 0.5s;
-  opacity: 0;
-}
-
-.not-delicious.animate {
-  opacity: 1;
-}
-
-.healthy {
+/* .healthy {
   background-color: green;
   animation-name: shift-healthy;
   animation-duration: 0.8s;
@@ -74,4 +79,8 @@ td {
   background-color: grey;
   animation-name: shift-unhealthy;
   animation-duration: 0.8s;
+} */
+
+.animate {
+  opacity: 1 !important;
 }
