@@ -25,6 +25,24 @@ td {
   }
 }
 
+@keyframes shift-healthy {
+  from {
+    background-color: gray;
+  }
+  to {
+    background-color: green;
+  }
+}
+
+@keyframes shift-unhealthy {
+  from {
+    background-color: green;
+  }
+  to {
+    background-color: gray;
+  }
+}
+
 .delicious {
   transform: translateX(30px);
   animation-name: shift-right;
@@ -48,4 +66,12 @@ td {
 
 .healthy {
   background-color: green;
+  animation-name: shift-healthy;
+  animation-duration: 0.8s;
+}
+
+.not-healthy {
+  background-color: grey;
+  animation-name: shift-unhealthy;
+  animation-duration: 0.8s;
 }
