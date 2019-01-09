@@ -1,3 +1,23 @@
+# bookish-engine
+
+## Why
+
+A code challenge implemented with create-react-app
+
+## Getting Up and Running
+
+`yarn`
+
+## Run Locally
+
+`yarn start`
+
+then browse to
+
+## License
+
+UNLICENSED
+
 /\*
 
 Welcome to our mini project!
