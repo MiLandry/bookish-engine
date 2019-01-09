@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import FoodRow from "../FoodRow/FoodRow"
 
-const FoodTable = ({ foodData }) => {
+const FoodTable = ({ foodData, onChange }) => {
   return (
     <table>
       <tbody>
@@ -15,9 +15,11 @@ const FoodTable = ({ foodData }) => {
           return (
             <FoodRow
               key={key}
+              id={key}
               label={label}
               isDelicious={isDelicious}
               isHealthy={isHealthy}
+              onChange={onChange}
             />
           )
         })}

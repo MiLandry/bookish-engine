@@ -35,12 +35,20 @@ class App extends Component {
     this.state = {
       foodData: dataAsArray,
     }
+    this.onChange = this.onChange.bind(this)
+  }
+
+  onChange(event) {
+    console.log("event", event)
+    console.log("event.target", event.target)
+    console.log("event.target.checked", event.target.checked)
+    console.log("this.state.foodData", this.state.foodData)
   }
 
   render() {
     return (
       <div className="App">
-        <FoodTable foodData={this.state.foodData} />
+        <FoodTable foodData={this.state.foodData} onChange={this.onChange} />
       </div>
     )
   }
