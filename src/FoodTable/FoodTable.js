@@ -2,7 +2,14 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import FoodRow from "../FoodRow/FoodRow"
 
-const FoodTable = ({ foodData, onChange }) => {
+const FoodTable = ({ data, onChange }) => {
+  const food = Object.keys(data).map(key => {
+    const datum = {
+      ...data[key],
+      key: key,
+    }
+    return datum
+  })
   return (
     <table>
       <tbody>
@@ -11,7 +18,7 @@ const FoodTable = ({ foodData, onChange }) => {
           <th>Delicious?</th>
           <th>Healthy?</th>
         </tr>
-        {foodData.map(({ key, label, isDelicious, isHealthy }) => {
+        {food.map(({ key, label, isDelicious, isHealthy }) => {
           return (
             <FoodRow
               key={key}
