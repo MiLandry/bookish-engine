@@ -1,10 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import styled from "styled-components"
-
-const AppWrapper = styled.tr`
-  text-align: center;
-`
+import TD from "../core/CustomTableData"
 
 const FoodRow = ({ label, isDelicious, isHealthy, onChange, id, isLoaded }) => {
   let className = "food-row"
@@ -16,8 +12,8 @@ const FoodRow = ({ label, isDelicious, isHealthy, onChange, id, isLoaded }) => {
 
   return (
     <tr className={className}>
-      <td>{label}</td>
-      <td>
+      <TD>{label}</TD>
+      <TD>
         <input
           type="checkbox"
           name="isDelicious"
@@ -25,8 +21,8 @@ const FoodRow = ({ label, isDelicious, isHealthy, onChange, id, isLoaded }) => {
           checked={isDelicious}
           onChange={onChange}
         />
-      </td>
-      <td>
+      </TD>
+      <TD>
         <input
           type="checkbox"
           name="isHealthy"
@@ -34,12 +30,16 @@ const FoodRow = ({ label, isDelicious, isHealthy, onChange, id, isLoaded }) => {
           checked={isHealthy}
           onChange={onChange}
         />
-      </td>
+      </TD>
     </tr>
   )
 }
 FoodRow.propTypes = {
   label: PropTypes.string.isRequired,
+  isDelicious: PropTypes.bool.isRequired,
+  isHealthy: PropTypes.bool.isRequired,
+  onChange: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
+  isLoaded: PropTypes.bool.isRequired,
 }
-
 export default FoodRow

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import "./App.css"
 import FoodTable from "./FoodTable/FoodTable"
+import Button from "./core/CustomButton"
 
 const initialFood = {
   e5d9d9f5: {
@@ -46,9 +47,14 @@ function App() {
     setFood(food)
   }
 
+  const logData = () => {
+    console.log(food)
+  }
+
   return (
     <div className={"App"}>
       <FoodTable data={food} onChange={onChange} isLoaded={isLoaded} />
+      <Button onClick={logData}>Log Data</Button>
     </div>
   )
 }

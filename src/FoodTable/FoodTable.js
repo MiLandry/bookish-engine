@@ -1,6 +1,7 @@
-import React, { Component } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import FoodRow from "../FoodRow/FoodRow"
+import TH from "../core/CustomTableHeader"
 
 const FoodTable = ({ data, onChange, isLoaded }) => {
   const food = Object.keys(data).map(key => {
@@ -14,9 +15,9 @@ const FoodTable = ({ data, onChange, isLoaded }) => {
     <table>
       <tbody>
         <tr>
-          <th>name</th>
-          <th>Delicious?</th>
-          <th>Healthy?</th>
+          <TH>name</TH>
+          <TH>Delicious?</TH>
+          <TH>Healthy?</TH>
         </tr>
         {food.map(({ key, label, isDelicious, isHealthy }) => {
           return (
@@ -35,5 +36,9 @@ const FoodTable = ({ data, onChange, isLoaded }) => {
     </table>
   )
 }
-FoodTable.propTypes = {}
+FoodTable.propTypes = {
+  data: PropTypes.object.isRequired,
+  onChange: PropTypes.func.isRequired,
+  isLoaded: PropTypes.bool.isRequired,
+}
 export default FoodTable
