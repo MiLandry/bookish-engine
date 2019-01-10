@@ -34,7 +34,7 @@ td {
   }
 }
 
-@keyframes shift-unhealthy {
+@keyframes shift-grey {
   from {
     background-color: green;
   }
@@ -52,7 +52,6 @@ td {
   animation: shift-right 0.5s, shift-green 0.8s;
   background-color: green;
 }
-/* from here */
 .delicious.not-healthy {
   transform: translateX(30px);
   animation: shift-right 0.5s, shift-grey 0.8s;
@@ -63,7 +62,6 @@ td {
   animation: shift-baseline 0.5s, shift-green 0.8s;
   background-color: green;
 }
-/* to here */
 .not-delicious.not-healthy {
   animation: shift-baseline 0.5s, shift-grey 0.8s;
   background-color: grey;

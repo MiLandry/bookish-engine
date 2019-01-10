@@ -1,5 +1,4 @@
-import React, { useState } from "react"
-import logo from "./logo.svg"
+import React, { useState, useEffect } from "react"
 import "./App.css"
 import FoodTable from "./FoodTable/FoodTable"
 
@@ -25,6 +24,22 @@ function App() {
   const [food, setFood] = useState(initialFood)
   const [isLoaded, setIsLoaded] = useState(false)
 
+  /**
+   * this effect declares the app 'loaded' after about a
+   * second for the purposes of not showing animation.
+   */
+  useEffect(
+    () => {
+      window.setTimeout(() => {
+        setIsLoaded(true)
+      }, 800)
+    },
+    [isLoaded],
+  )
+
+  /**
+   * handler for toggling checkboxes
+   */
   const onChange = event => {
     const { id, checked, name } = event.target
     food[id][name] = checked
